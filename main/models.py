@@ -3,7 +3,7 @@ from django.db import models
 
 class Student(models.Model):
     fullname = models.CharField(max_length=50, verbose_name="ФИО ученика")
-    image = models.ImageField(upload_to="students/")
+    image = models.ImageField(upload_to="students/", verbose_name="Фото")
 
     def __str__(self):
         return self.fullname
@@ -152,3 +152,16 @@ class Plan(models.Model):
     class Meta:
         verbose_name = "План"
         verbose_name_plural = "Пландар"
+
+
+class Banner(models.Model):
+    title = models.CharField(max_length=50, verbose_name="Название")
+    desc = models.TextField(verbose_name="Описание")
+    image = models.ImageField(upload_to="banners/", verbose_name="Фото")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Баннер"
+        verbose_name_plural = "Баннер"

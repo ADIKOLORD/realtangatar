@@ -6,24 +6,14 @@
 <!-- Banner Starts Here -->
 <div class="banner header-text">
     <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
+        {% for banner in banners %}
+        <div class="banner-item-01" style="background-image: url({{ banner.image.url }})">
             <div class="text-content">
-                <h4>Убакыт</h4>
-                <h2>Учкан куш</h2>
+                <h4>{{ banner.title }}</h4>
+                <h2>{{ banner.desc }}</h2>
             </div>
         </div>
-        <div class="banner-item-02">
-            <div class="text-content">
-                <h4>Окуучу</h4>
-                <h2>Биздин келечек</h2>
-            </div>
-        </div>
-        <div class="banner-item-03">
-            <div class="text-content">
-                <h4>Мугалим</h4>
-                <h2>Момолуу дарак</h2>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <!-- Banner Ends Here -->

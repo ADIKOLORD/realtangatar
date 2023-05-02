@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Teacher, Student, Endowment, MediaTheme, Accreditation, \
-    Ustav, Jobo, Protocol, Plan
+    Banner
 
 
 def main_page(request):
@@ -8,7 +8,8 @@ def main_page(request):
         'title': 'MAIN',
         'index': 'active',
         'students': Student.objects.all(),
-        'accreditations': Accreditation.objects.all()
+        'accreditations': Accreditation.objects.all(),
+        'banners': Banner.objects.all()
     }
     return render(request, 'index.html', context)
 

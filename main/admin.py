@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Teacher, Student, Endowment, MediaTheme, MediaContent, Accreditation, \
-    Protocol, Jobo, Ustav, Plan
+    Protocol, Jobo, Ustav, Plan, Banner
 
 
 @admin.register(Teacher)
@@ -11,6 +11,11 @@ class TeacherAdmin(admin.ModelAdmin):
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ["fullname"]
+
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ["title"]
 
 
 @admin.register(Endowment)
