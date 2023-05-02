@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Content -->
+<div class="page-heading products-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Gallery</h4>
+                    <h2>GIMNASIUM GALLERY</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="overflow-x: auto;">
+                <div class="filters">
+                    <ul style="width: 100%; overflow-x: auto; white-space: nowrap; height: 45px;">
+                        <li class="active" data-filter="*">Все</li>
+                        {% for theme in themes %}
+                        <li data-filter=".{{ theme.id }}">{{ theme.theme }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="filters-content">
+                    <div class="row grid">
+                        {% for theme in themes %}
+                        {% for content in theme.mycontent.all %}
+                        <div class="col-lg-4 col-md-4 all {{ theme.id }}">
+                            <div class="product-item">
+                                {% if content.image %}
+                                <img src="{{ content.image.url }}" alt=""
+                                     style="height: 100%; max-height: 300px;">
+                                {% elif content.video %}
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="560" height="315"
+                                            src="{{ content.video }}"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
+                                </div>
+                                <!--                                "https://www.youtube.com/embed/reURUKqkyYw"-->
+                                <!--                                "https://youtu.be/reURUKqkyYw"-->
+                                <!--                                "https://youtu.be/B0y2ztR1kKc"-->
+                                <!--                                "https://www.youtube.com/embed/B0y2ztR1kKc"-->
+                                {% endif %}
+
+
+                                <div class="down-content">
+                                    <p>{{ content.desc }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!--            <div class="col-md-12">-->
+            <!--                <ul class="pages">-->
+            <!--                    <li><a href="#">1</a></li>-->
+            <!--                    <li class="active"><a href="#">2</a></li>-->
+            <!--                    <li><a href="#">3</a></li>-->
+            <!--                    <li><a href="#">4</a></li>-->
+            <!--                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>-->
+            <!--                </ul>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Content -->
+<div class="page-heading contact-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Бирикме</h4>
+                    <h2>Усулдук Бирикме</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="send-message">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2 style="font-weight: bold;">Усулдук Бирикмелер</h2>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <ul class="accordion">
+                    <li>
+                        <a style="font-size: 30px;">Табигый Илимдер</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "1" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Кыргыз Тили</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "2" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Орус Тили</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "3" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Англис Тили</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "4" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Физика</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "5" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Математика</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "6" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a style="font-size: 30px;">Технология</a>
+                        <div class="content">
+                            <p style="font-size: 20px;">
+                                {% for teacher in teachers %}
+                                {% if teacher.birikme == "7" %}
+
+                                {{ teacher.fullname }}<br>
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

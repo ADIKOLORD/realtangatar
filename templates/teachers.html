@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page Content -->
+<div class="page-heading about-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>О нас</h4>
+                    <h2>Биздин мугалимдер</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="best-features about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Биздин жайгашкан жерибиз</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.619439313619!2d73.1831208338959!3d40.68919813188381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bd7608f46dd7f7%3A0xf11b3668f3ca64fb!2z0JjQvdGC0LXRgNC90LDRgi3Qs9C40LzQvdCw0LfQuNGPICMxNCDQuNC8LiDQkC4g0KLQsNC90LPQsNGC0LDRgNC-0LLQsA!5e0!3m2!1sen!2skg!4v1681733130940!5m2!1sen!2skg"
+                            width="100%" height="330px" frameborder="0" style="border:0"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <h4>Биздин максат</h4>
+                    <p style="font-size: 18px; font-weight: bold;">Окуучуларга мыкты тарбия менен
+                        айкалышкан сапаттуу билим берүү аркылуу
+                        өлкөбүздүн өнүгүүсүнө салым кошуу. <br><br>
+                        Билим гана адамды эркин жана бийик кылат!</p>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://instagram.com/14_tangatarov_media"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://t.me/tangatarovmedia"><i class="fa fa-telegram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="team-members">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Биздин мугалимдер</h2>
+                </div>
+            </div>
+            {% for teacher in teachers_list %}
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="{{ teacher.image.url }}" alt=""
+                             style="max-width: 100%; height: auto;">
+
+                    </div>
+                    <div class="down-content">
+                        <h4>{{ teacher.fullname }}</h4>
+                        <span>{{ teacher.biography }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

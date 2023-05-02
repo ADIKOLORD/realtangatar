@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>№14 ТАНГАТАРОВ</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!--
+
+    https://templatemo.com/tm-546-sixteen-clothing
+
+    -->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+</head>
+
+<body>
+
+<!-- ***** Preloader Start ***** -->
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- Header -->
+<header class="" style="background-color: #000;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container header-container">
+            <a class="navbar-brand" href="{% url 'home' %}"
+               style="display: flex; align-items: center;">
+                <img src="{% static 'assets/images/logotangatarov.jpg' %}" alt="Logo"
+                class="logo-img">
+                <h2 class="tit"><em>№14</em> А.ТАНГАТАРОВ <br><em> ИНТЕРНАТ-ГИМНАЗИЯСЫ</em></h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item {{ index }}">
+                        <a class="nav-link" href="{% url 'home' %}" style="font-weight: bold;">
+                            Башкы бет
+                        </a>
+                    </li>
+                    <li class="nav-item {{ gallery }}">
+                        <a class="nav-link" href="{% url 'gallery' %}" style="font-weight: bold;">
+                            Галерея</a>
+                    </li>
+                    <li class="nav-item {{ teachers }}">
+                        <a class="nav-link" href="{% url 'teachers' %}" style="font-weight: bold;">
+                            Мугалимдер</a>
+                    </li>
+                    <li class="nav-item {{ endowment }}">
+                        <a class="nav-link" href="{% url 'endowment' %}" style="font-weight: bold;">
+                            Эндаумент</a>
+                    </li>
+                    <li class="nav-item {{ usulbirik }}">
+                        <a class="nav-link" href="{% url 'usulbirik' %}" style="font-weight: bold;">
+                            Усулдук Бирикме</a>
+                    </li>
+                    <li class="nav-item dropdown {{ accreditation }}">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           style="font-weight: bold;">
+                            Аккредитация</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            {% for accredit in accreditations %}
+                            <a class="dropdown-item" href="{% url 'accreditation' accredit.id %}">
+                                {{ accredit.year }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    @media (max-width: 990px) {
+        img[alt="Logo"] {
+            width: 55px;
+            margin-left: -28px;
+            margin-top: -10px;
+        }
+        h2 {
+        line-height: 1;
+        margin-top: -10px;
+      }
+    }
+    @media only screen and (min-width: 991px) {
+        .logo-img {
+            width: 100%;
+            max-width: 60px;
+        }
+    }
+    .header {
+        max-width: 100%;
+        padding: 0%;
+        text-alight: left;
+    }
+    .header-container {
+        max-width: 100%;
+        padding: 0%;
+        text-alight: left;
+    }
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding: 0;
+  margin-top: 2px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu li {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+
+
+}
+
+
+
+
+
+
+</style>
+
+
+{% block content %}
+
+{% endblock %}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner-content">
+                    <p>© 1994-2023, ОАО «№14 А.Тангатаров интернат-гимназиясы»
+
+                        <a rel="nofollow noopener" href="https://instagram.com/a_d_i_k_0"
+                                              target="_blank">@ADIKOLORD</a></p>
+                    <p>Мы в соц сетях: </p>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://instagram.com/14_tangatarov_media"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://t.me/tangatarovmedia"><i class="fa fa-telegram"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+<!-- Additional Scripts -->
+<script>
+    $(document).ready(function(){
+        $('.owl-banner').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:false,
+            autoplay:true, // автоматическое переключение включено
+            autoplayTimeout:5000, // время между переключениями в миллисекундах
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+</script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+<script src="{% static 'assets/js/owl.js' %}"></script>
+<script src="{% static 'assets/js/slick.js' %}"></script>
+<script src="{% static 'assets/js/isotope.js' %}"></script>
+<script src="{% static 'assets/js/accordions.js' %}"></script>
+
+
+<script language="text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

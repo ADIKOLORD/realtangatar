@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Content -->
+<div class="page-heading products-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Аккредитация</h4>
+                    <h2>{{ accredit.year }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="best-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left-content">
+                    <h2 style="font-weight: bold;"><br>Уставтар:</h2>
+                    <ul class="featured-list">
+                        {% for ustav in accredit.ustavtar.all %}
+                        <li>
+                            <a href="{{ ustav.ustav.url }}"
+                               style="font-size: 20px; font-weight: bold; text-decoration: none;
+                               border-bottom: 2px solid black;">{{ ustav.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="left-content">
+                    <h2 style="font-weight: bold;"><br>Протоколдор:</h2>
+                    <ul class="featured-list">
+                        {% for protocol in accredit.protocols.all %}
+                        <li>
+                            <a href="{{ protocol.protocol.url }}"
+                               style="font-size: 20px; font-weight: bold; text-decoration: none;
+                               border-bottom: 2px solid black;">{{ protocol.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="left-content">
+                    <h2 style="font-weight: bold;"><br>Жоболор:</h2>
+                    <ul class="featured-list">
+                        {% for jobo in accredit.jobolor.all %}
+                        <li>
+                            <a href="{{ jobo.jobo.url }}"
+                               style="font-size: 20px; font-weight: bold; text-decoration: none;
+                               border-bottom: 2px solid black;">{{ jobo.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="left-content">
+                    <h2 style="font-weight: bold;"><br>Пландар:</h2>
+                    <ul class="featured-list">
+                        {% for plan in accredit.plans.all %}
+                        <li>
+                            <a href="{{ plan.plan.url }}"
+                               style="font-size: 20px; font-weight: bold; text-decoration: none;
+                               border-bottom: 2px solid black;">{{ plan.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

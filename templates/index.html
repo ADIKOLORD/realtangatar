@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+            <div class="text-content">
+                <h4>Убакыт</h4>
+                <h2>Учкан куш</h2>
+            </div>
+        </div>
+        <div class="banner-item-02">
+            <div class="text-content">
+                <h4>Окуучу</h4>
+                <h2>Биздин келечек</h2>
+            </div>
+        </div>
+        <div class="banner-item-03">
+            <div class="text-content">
+                <h4>Мугалим</h4>
+                <h2>Момолуу дарак</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Ends Here -->
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Биздин сыймыктар</h2>
+                    <a href="{% url 'teachers' %}">Мугалимдер <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            {% for student in students %}
+            <div class="col-md-4">
+                <div class="product-item">
+                    <a href="#"><img src="{{ student.image.url }}" alt=""></a>
+                    <div class="down-content">
+                            <h4 style="text-align: center; color: red;">{{ student.fullname }}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="best-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Биз сан менен</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <h4>Биздин мектептин статистикасы</h4>
+                    <p style="font-size: 18px; font-weight: bold;">№14 Абдулла Тангатаров атындагы
+                        интернат-гимназиясы 1994-жылы негизделген.</p>
+                    <ul class="featured-list">
+                        <li style="font-size: 18px;">Окуучулардын саны - 450</li>
+                        <li style="font-size: 18px;">Мугалимдердин саны - 47</li>
+                        <li style="font-size: 18px;">Алтын сертификат алгандардын саны - 2</li>
+                        <li style="font-size: 18px;">Жакшы окугандардын саны - 450</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-image">
+                    <img src="{% static 'assets/images/feature-image.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+    
+
