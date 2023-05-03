@@ -6,6 +6,7 @@ SECRET_KEY = 'z=$w+0lok*(&tu-ve%6zewz^6(w=si-cn4n1f2a-662lffmoj^'
 DEBUG = True
 
 ALLOWED_HOSTS = ['tangatarov.com', 'www.tangatarov.com', '127.0.0.1']
+# ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',

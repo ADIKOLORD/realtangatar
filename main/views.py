@@ -5,18 +5,18 @@ from .models import Teacher, Student, Endowment, MediaTheme, Accreditation, \
 
 def main_page(request):
     context = {
-        'title': 'MAIN',
+        'title': "Башкы Бет",
         'index': 'active',
         'students': Student.objects.all(),
         'accreditations': Accreditation.objects.all(),
-        'banners': Banner.objects.all()
+        'banners': Banner.objects.all(),
     }
     return render(request, 'index.html', context)
 
 
 def gallery_page(request):
     context = {
-        'title': 'MAIN',
+        'title': 'Галерея',
         'gallery': 'active',
         'themes': MediaTheme.objects.all(),
         'accreditations': Accreditation.objects.all()
@@ -26,7 +26,7 @@ def gallery_page(request):
 
 def teachers_page(request):
     context = {
-        'title': 'MAIN',
+        'title': 'Мугалимдер',
         'teachers': 'active',
         'teachers_list': Teacher.objects.all(),
         'accreditations': Accreditation.objects.all()
@@ -36,7 +36,7 @@ def teachers_page(request):
 
 def endowment_page(request):
     context = {
-        'title': 'MAIN',
+        'title': 'Эндаумент',
         'endowment': 'active',
         'endowments': Endowment.objects.all(),
         'accreditations': Accreditation.objects.all()
@@ -46,7 +46,7 @@ def endowment_page(request):
 
 def usuldukbirikme_page(request):
     context = {
-        'title': 'MAIN',
+        'title': 'Усулдук Бирикме',
         'usulbirik': 'active',
         'teachers': Teacher.objects.all(),
         'accreditations': Accreditation.objects.all()
@@ -56,7 +56,7 @@ def usuldukbirikme_page(request):
 
 def accreditation_page(request, pk):
     context = {
-        'title': 'MAIN',
+        'title': 'Аккредитация',
         'accreditation': 'active',
         'accredit': Accreditation.objects.get(pk=pk),
         'accreditations': Accreditation.objects.all(),
