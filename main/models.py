@@ -96,14 +96,14 @@ class Ustav(models.Model):
         related_name="ustavtar",
     )
     title = models.CharField(max_length=100, verbose_name='Название')
-    ustav = models.FileField(verbose_name="Устав", upload_to="documents/ustav/")
+    ustav = models.FileField(verbose_name="у-ч Актылар", upload_to="documents/ustav/")
 
     def __str__(self):
-        return f"Устав - {self.title}"
+        return f"у.ч актылар - {self.title}"
 
     class Meta:
-        verbose_name = "Устав"
-        verbose_name_plural = "Уставтар"
+        verbose_name = "У-ч Актылар"
+        verbose_name_plural = "У-ч Актылар"
 
 
 class Protocol(models.Model):

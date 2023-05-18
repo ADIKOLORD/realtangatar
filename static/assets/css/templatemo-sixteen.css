@@ -209,7 +209,7 @@ header {
 	z-index: 99999;
 	width: 100%;
 	height: 80px;
-	background-color: #000;
+	background-color: #232323;
 	-webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
@@ -324,29 +324,13 @@ header .navbar {
 	background-position: center center;
 }
 
-.banner-item-02 {
-	padding: 300px 0px;
-	background-image: url(../images/slide_02.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.banner-item-03 {
-	padding: 300px 0px;
-	background-image: url(../images/slide_03.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
 .banner .banner-item {
 	max-height: 600px;
 }
 
 .banner .text-content {
 	position: absolute;
-	top: 50%;
+	top: 80%;
 	transform: translateY(-50%);
 	text-align: center;
 	width: 100%;
