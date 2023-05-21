@@ -17,6 +17,34 @@
 </div>
 
 
+<div class="team-members">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Биздин мугалимдер</h2>
+                </div>
+            </div>
+            {% for teacher in teachers_list %}
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="{{ teacher.image.url }}" alt=""
+                             style="max-width: 100%; height: auto;">
+
+                    </div>
+                    <div class="down-content">
+                        <h4>{{ teacher.fullname }}</h4>
+                        <span>{{ teacher.biography }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
 <div class="best-features about-features">
     <div class="container">
         <div class="row">
@@ -46,34 +74,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="team-members">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-heading">
-                    <h2>Биздин мугалимдер</h2>
-                </div>
-            </div>
-            {% for teacher in teachers_list %}
-            <div class="col-md-4">
-                <div class="team-member">
-                    <div class="thumb-container">
-                        <img src="{{ teacher.image.url }}" alt=""
-                             style="max-width: 100%; height: auto;">
-
-                    </div>
-                    <div class="down-content">
-                        <h4>{{ teacher.fullname }}</h4>
-                        <span>{{ teacher.biography }}</span>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </div>

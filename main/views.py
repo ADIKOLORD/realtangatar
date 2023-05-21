@@ -44,12 +44,15 @@ def endowment_page(request):
     return render(request, 'endowment.html', context)
 
 
-def usuldukbirikme_page(request):
+def usuldukbirikme_page(request, pk: str):
+    if pk not in ["2", "3", "4", "5", "6", "7"]:
+        pk = "1"
     context = {
         'title': 'Усулдук Бирикме',
         'usulbirik': 'active',
-        'teachers': Teacher.objects.all(),
-        'accreditations': Accreditation.objects.all()
+        'teachers_list': Teacher.objects.filter(birikme=pk),
+        'accreditations': Accreditation.objects.all(),
+        f'active{pk}': " active",
     }
     return render(request, 'usuldukbirikme.html', context)
 
@@ -62,3 +65,12 @@ def accreditation_page(request, pk):
         'accreditations': Accreditation.objects.all(),
     }
     return render(request, 'accreditation.html', context)
+
+
+def test_page(request):
+    context = {
+        'title': 'Аккредитация',
+        'accreditation': 'active',
+        'accreditations': Accreditation.objects.all(),
+    }
+    return render(request, 'test.html', context)
